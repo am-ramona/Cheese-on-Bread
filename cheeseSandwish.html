@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			html, body {
+				margin: 0; padding: 0;
+				width: 100%; height: 100%;
+				overflow: hidden;
+				background: #171819;
+			}
+			figure { width: 255px; }
+			canvas, figure { cursor: url(knife.jpg), auto; margin: 0; }
+			canvas { position: absolute; top: 28px; left: 33px; }
+		</style>
+	</head>
+	
+	<body>
+		<figure><img src="iambread.png" alt="Bread" /> </figure>
+		<canvas id="canvas"></canvas>
+		
+		<script>
+			var canvas = document.getElementById('canvas');
+			ctx = canvas.getContext('2d');
+			
+			canvas.width = '200';
+			canvas.height = '260';
+			
+			canvas.addEventListener('mousemove', function(evt) {
+				var rect = canvas.getBoundingClientRect();
+				var x = evt.clientX - rect.left;
+				var y = evt.clientY - rect.top;
+				
+				var img = new Image();
+				img.src = 'cheese-slice.jpg';
+				
+				ctx.beginPath();
+				ctx.moveTo(x, y);
+				ctx.quadraticCurveTo(20, 0, x, y);
+				ctx.lineWidth = 10;
+				ctx.strokeStyle = '#fec059';
+				ctx.stroke();
+				
+			}, false);
+		</script>
+	</body>
+</html>
