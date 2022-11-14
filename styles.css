@@ -1,0 +1,9 @@
+html, body {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: #171819;
+}
+figure { width: 255px; }
+canvas, figure { cursor: url(img/knife.jpg), auto; margin: 0; }
+canvas { position: absolute; top: 28px; left: 33px; }
